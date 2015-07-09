@@ -1,0 +1,10 @@
+{
+  "section": "Cover",
+  "title": "Politics<br/>Business & Finance<br/>Science & technology",
+  "rubric": "For the future curious",
+  "img" : "/images/landing_01.jpg",
+  "id": 9,
+  "page": {
+    "aliasUrl": "aliasOfThePage9"
+  }
+}
