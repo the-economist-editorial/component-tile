@@ -9,8 +9,11 @@ export default class Tile extends React.Component {
       url: React.PropTypes.string,
       section: React.PropTypes.string,
       title: React.PropTypes.string,
-      rubric: React.PropTypes.rubric,
-      img: React.PropTypes.img,
+      rubric: React.PropTypes.string,
+      imglrg: React.PropTypes.string,
+      imgmed: React.PropTypes.string,
+      imgsml: React.PropTypes.string,
+      imgalt: React.PropTypes.string
     };
   }
 
@@ -29,10 +32,15 @@ export default class Tile extends React.Component {
           <div className="image-part">
             <div className="image-tint"></div>
             <div className="image-grad"></div>
-            <img className="image" src={this.props.data.img} />
+            <img className="image" srcSet={this.props.data.imglrg + ` 1220w ,` + this.props.data.imgmed + ` 1024w ,` + this.props.data.imgsml + ` 568w`}  alt={this.props.data.imgalt} />
           </div>
         </a>
       </div>
     );
   }
 }
+
+
+
+
+
