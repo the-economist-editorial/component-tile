@@ -13,34 +13,32 @@ export default class Tile extends React.Component {
       imglrg: React.PropTypes.string,
       imgmed: React.PropTypes.string,
       imgsml: React.PropTypes.string,
-      imgalt: React.PropTypes.string
+      imgalt: React.PropTypes.string,
     };
   }
 
   render() {
     return (
-      <div className={'article-reveal-tile ${this.props.data.animate}'} data-id={this.props.data.id}
+      <article className={'article-reveal-tile ${this.props.data.animate}'} data-id={this.props.data.id}
       id={'tile' + this.props.data.id}>
         <a href={this.props.data.url} className="article-reveal-tile-link">
           <div className="tile-content">
             <div className="text-part">
-              <h2 className="section">{this.props.data.section}</h2>
+              <h1 className="section">{this.props.data.section}</h1>
               <h2 className="title" dangerouslyInsertInnerHTML={{ __html: this.props.data.title }}/>
-              <h2 className="rubrik">{this.props.data.rubric}</h2>
+              <p className="rubric">{this.props.data.rubric}</p>
             </div>
           </div>
           <div className="image-part">
             <div className="image-tint"></div>
             <div className="image-grad"></div>
-            <img className="image" srcSet={this.props.data.imglrg + ` 1220w ,` + this.props.data.imgmed + ` 1024w ,` + this.props.data.imgsml + ` 568w`}  alt={this.props.data.imgalt} />
+            <img className="image"
+            srcSet={this.props.data.imglrg + ` 1220w ,` + this.props.data.imgmed + ` 1024w ,` +
+this.props.data.imgsml + ` 568w`}
+            alt={this.props.data.imgalt} />
           </div>
         </a>
-      </div>
+      </article>
     );
   }
 }
-
-
-
-
-

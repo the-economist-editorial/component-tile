@@ -2,7 +2,10 @@
   "section": "Cover",
   "title": "Politics<br/>Business & Finance<br/>Science & technology",
   "rubric": "For the future curious",
-  "img" : "/images/landing_01.jpg",
+  "imglrg" : "/images/1220x900.png",
+  "imgmed" : "/images/1024x755.png",
+  "imgsml" : "/images/568x419.png",
+  "imgalt" : "alt tag here",
   "id": 9,
   "page": {
     "aliasUrl": "aliasOfThePage9"
