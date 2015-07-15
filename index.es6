@@ -19,7 +19,7 @@ export default class Tile extends React.Component {
 
   render() {
     return (
-      <article className={'article-reveal-tile ${this.props.data.animate}'} data-id={this.props.data.id}
+      <article className="article-reveal-tile" data-id={this.props.data.id}
       id={'tile' + this.props.data.id}>
         <a href={this.props.data.url} className="article-reveal-tile-link">
           <div className="tile-content">
