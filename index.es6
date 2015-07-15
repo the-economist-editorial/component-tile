@@ -26,7 +26,6 @@ export default class Tile extends React.Component {
             <div className="text-part">
               <h1 className="section">{this.props.data.section}</h1>
               <h2 className="title" dangerouslySetInnerHTML={{ __html: this.props.data.title }}/>
-              <h2 className="title">{this.props.data.title}</h2>
               <p className="rubric">{this.props.data.rubric}</p>
             </div>
           </div>
