@@ -45,7 +45,7 @@ export default class Tile extends React.Component {
             <div className="image-tint"></div>
             <div className="image-grad"></div>
             <img
-              className="ArticleTemplate--image"
+              className="Tile--image"
               src={`/${image['1x']}`}
               srcSet={this.getSrcSet(image)}
             />
