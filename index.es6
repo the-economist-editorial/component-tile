@@ -16,7 +16,7 @@ export default class Tile extends React.Component {
   }
 
   getSrcSet(image) {
-    return Object.keys(image).map((key) => `/${image[key]} ${key}`).join(',');
+    return Object.keys(image).map((key) => `${image[key]} ${key}`).join(',');
   }
 
   render() {
@@ -46,7 +46,7 @@ export default class Tile extends React.Component {
             <div className="image-grad"></div>
             <img
               className="Tile--image"
-              src={`/${image['1x']}`}
+              src={`${image['1x']}`}
               srcSet={this.getSrcSet(image)}
             />
           </div>
