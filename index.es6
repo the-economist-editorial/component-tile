@@ -21,6 +21,10 @@ export default class Tile extends React.Component {
 
   render() {
     const article = articleStore.get(this.props.id);
+    let image = article.attributes.tileimage || {};
+    if (this.props.wide) {
+      image = article.attributes.tileimagewide || image;
+    }
     return (
       <article
         className="article-reveal-tile"
@@ -42,8 +46,8 @@ export default class Tile extends React.Component {
             <div className="image-grad"></div>
             <img
               className="ArticleTemplate--image"
-              src={article.attributes[this.props.wide ? 'tileimagewide' : 'tileimage']['1x']}
-              srcSet={this.getSrcSet(article.attributes[this.props.wide ? 'tileimagewide' : 'tileimage'])}
+              src={image['1x']}
+              srcSet={this.getSrcSet(image)}
             />
           </div>
         </a>
