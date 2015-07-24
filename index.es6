@@ -7,7 +7,7 @@ export default class Tile extends React.Component {
   static get propTypes() {
     return {
       id: React.PropTypes.string,
-      wide: React.PropTypes.string,
+      wide: React.PropTypes.number,
     };
   }
 
