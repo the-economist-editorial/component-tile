@@ -36,7 +36,7 @@ export default class Tile extends React.Component {
               <h1 className="section">{article.attributes.section}</h1>
               <h2
                 className="title"
-                dangerouslySetInnerHTML={{ __html: article.attributes.title }}
+                dangerouslySetInnerHTML={{ __html: article.attributes.toc }}
               />
               <p className="rubric">{article.attributes.rubric}</p>
             </div>
