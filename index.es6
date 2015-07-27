@@ -30,7 +30,7 @@ export default class Tile extends React.Component {
         className="article-reveal-tile"
         id={'tile' + this.props.id}
       >
-        <a href={`/article/${this.props.id}`} className="article-reveal-tile-link">
+        <a href={`/article/${article.id}/${article.attributes.slug}`} className="article-reveal-tile-link">
           <div className="tile-content">
             <div className="text-part">
               <h1 className="section">{article.attributes.section}</h1>
