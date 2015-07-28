@@ -22,10 +22,10 @@ export default class Tile extends React.Component {
   render() {
     const article = articleStore.get(this.props.id);
     let image = article.attributes.tileimage || {};
-    const srcSet = this.getSrcSet(article.attributes.tileimage);
     if (this.props.wide) {
       image = article.attributes.tileimagewide || image;
     }
+    const srcSet = this.getSrcSet(image);
     return (
       <article
         className="Tile"
