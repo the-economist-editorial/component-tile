@@ -64,7 +64,7 @@
     "test:watch": "npm run test:base -- -wR min"
   },
   "dependencies": {
-    "@economist/component-articlestore": "^1.0.1",
+    "@economist/component-articlestore": "^2.0.0",
     "react": "^0.13.3"
   },
   "devDependencies": {
