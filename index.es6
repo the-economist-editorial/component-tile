@@ -21,9 +21,10 @@ export default class Tile extends React.Component {
 
   render() {
     const article = articleStore.get(this.props.id);
-    let image = article.attributes.tileimage['1.0x'] || {};
+    let image = article.attributes.tileimage || {};
+    const srcSet = this.getSrcSet(article.attributes.tileimage);
     if (this.props.wide) {
-      image = article.attributes.tileimagewide['1.0x'] || image;
+      image = article.attributes.tileimagewide || image;
     }
     return (
       <article
@@ -42,13 +43,13 @@ export default class Tile extends React.Component {
               <p className="rubric">{article.attributes.rubric}</p>
             </div>
           </div>
-          <div className="image-part">
+          <div className="Tile--inner-image">
             <div className="image-tint"></div>
             <div className="image-grad"></div>
             <img
               className="Tile--image"
-              src={`${image}`}
-              srcSet={this.getSrcSet(article.attributes.tileimage)}
+              src={`${image['1.0x']}`}
+              srcSet={srcSet}
             />
           </div>
         </a>
