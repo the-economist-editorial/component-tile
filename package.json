@@ -55,8 +55,9 @@
     "lint_opts": "--ignore-path .gitignore --ext .es6"
   },
   "scripts": {
+    "build": "npm-assets .",
     "lint": "eslint $npm_package_config_lint_opts .",
-    "prepublish": "babel index.es6 --stage=0 --loose > index.js",
+    "prepublish": "babel index.es6 --source-maps=inline --stage=0 --loose > index.js",
     "provision": "devpack-configure ./package.json",
     "serve": "component-devserver .",
     "test": "npm run test:base -- -R tap",
@@ -68,16 +69,18 @@
     "react": "^0.13.3"
   },
   "devDependencies": {
-    "@economist/component-devpack": "^2.3.0",
+    "@economist/component-devpack": "^2.5.0",
     "@economist/component-devserver": "^2.0.0",
     "@economist/component-testharness": "^1.1.0",
-    "babel": "^5.5.8",
+    "@economist/world-if-assets": "0.0.12",
+    "babel": "^5.8.9",
     "eslint": "^0.24.0",
     "eslint-config-strict": "^2.4.0",
     "eslint-plugin-filenames": "^0.1.1",
     "eslint-plugin-one-variable-per-var": "^0.0.3",
     "eslint-plugin-react": "^2.6.3",
     "mocha": "^2.2.5",
+    "npm-assets": "^0.1.0",
     "pre-commit": "^1.0.10"
   },
   "pre-commit": [

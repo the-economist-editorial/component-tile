@@ -1,6 +1,10 @@
 import React from 'react';
 import Tile from './index.es6';
-const data = require('./data.json');
+import WorldIfContent from '@economist/world-if-assets';
+
+for (const article of WorldIfContent.data[0].relationships.posts.data) {
+  Tile.store.add(article);
+}
 export default (
-  <Tile data={data} />
+  <Tile id="1" />
 );

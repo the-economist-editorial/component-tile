@@ -21,17 +21,18 @@ export default class Tile extends React.Component {
 
   render() {
     const article = articleStore.get(this.props.id);
-    let image = article.attributes.tileimage || {};
+    let image = article.attributes.tileimage['1.0x'] || {};
     if (this.props.wide) {
-      image = article.attributes.tileimagewide || image;
+      image = article.attributes.tileimagewide['1.0x'] || image;
     }
     return (
       <article
-        className="article-reveal-tile"
+        className="Tile"
         id={'tile' + this.props.id}
+        data-section={article.attributes.section}
       >
-        <a href={`/article/${article.id}/${article.attributes.slug}`} className="article-reveal-tile-link">
-          <div className="tile-content">
+        <a href={`/article/${article.id}/${article.attributes.slug}`} className="Tile--inner">
+          <div className="Tile--inner-content">
             <div className="text-part">
               <h1 className="section">{article.attributes.section}</h1>
               <h2
@@ -46,8 +47,8 @@ export default class Tile extends React.Component {
             <div className="image-grad"></div>
             <img
               className="Tile--image"
-              src={`${image['1x']}`}
-              srcSet={this.getSrcSet(image)}
+              src={`${image}`}
+              srcSet={this.getSrcSet(article.attributes.tileimage)}
             />
           </div>
         </a>
