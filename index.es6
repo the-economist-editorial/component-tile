@@ -26,21 +26,25 @@ export default class Tile extends React.Component {
       image = article.attributes.tileimagewide || image;
     }
     const srcSet = this.getSrcSet(image);
+    const alt = article.attributes.alt;
     return (
       <article
         className="Tile"
         id={'tile' + this.props.id}
         data-section={article.attributes.section}
+        itemProp="itemListElement"
       >
-        <a href={`/article/${article.id}/${article.attributes.slug}`} className="Tile--inner">
+        <a href={`/article/${article.id}/${article.attributes.slug}`} className="Tile--inner"
+        itemProp="url">
           <div className="Tile--inner-content">
             <div className="text-part">
               <h1 className="section">{article.attributes.section}</h1>
               <h2
                 className="title"
                 dangerouslySetInnerHTML={{ __html: article.attributes.toc }}
+                itemProp="name"
               />
-              <p className="rubric">{article.attributes.rubric}</p>
+              <p className="rubric" itemProp="description">{article.attributes.rubric}</p>
             </div>
           </div>
           <div className="Tile--inner-image">
@@ -50,6 +54,8 @@ export default class Tile extends React.Component {
               className="Tile--image"
               src={`${image['1.0x']}`}
               srcSet={srcSet}
+              alt={alt}
+              itemProp="image"
             />
           </div>
         </a>
